@@ -1,0 +1,579 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+    <title>Gallery</title>
+    <style>
+	#content{
+		width: 980px; 
+		margin:0 auto 100px auto; 
+		position:relative;
+	}
+	#content:after{
+		content: ".";
+		clear: both;
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+	#content #conLeft{
+      	float:left; 
+        margin-right: 10px;
+    }
+    #content #show{
+      	width: 710px; 
+        position:relative; 
+        margin-top: 20px;
+    }
+	.galist a{
+		display:block;
+		color: #000;
+		font-size: 14px;
+		padding: 15px 20px 20px 20px;
+		border-bottom: 1px solid #d6d6d6;
+	}
+    .galist li{
+	  	background-color: #FFF;
+		border-right: 1px solid #d6d6d6;
+		float: left;		
+		cursor: pointer;
+	}	
+	.galist:after{
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		height: 0px;
+	}
+	.galist li:hover a{
+		border-bottom: 1px solid #fff;
+	}
+	.galist .all a{
+		border-top: 3px solid #C09;
+	}	
+	.galist .all a:hover{
+		border-top: 3px solid #F6F;
+	}
+	.galist .all a:focus{
+		border-top: 3px solid #F6F;
+		border-bottom: 1px solid #fff;		
+	}
+	
+	.galist .jav a{
+		border-top: 3px solid #630;
+	}	
+	.galist .jav a:hover{
+		border-top: 3px solid #693;
+	}
+	.galist .jav a:focus{
+		border-top: 3px solid #693;
+		border-bottom: 1px solid #fff;		
+	}
+	
+	.galist .ui a{
+		border-top: 3px solid #30C;
+	}	
+	.galist .ui a:hover{
+		border-top: 3px solid #36F;
+	}
+	.galist .ui a:focus{
+		border-top: 3px solid #36F;
+		border-bottom: 1px solid #fff;		
+	}
+	
+	.galist .fra a{
+		border-top: 3px solid #C30;
+	}	
+	.galist .fra a:hover{
+		border-top: 3px solid #CC3;
+	}
+	.galist .fra a:focus{
+		border-top: 3px solid #CC3;
+		border-bottom: 1px solid #fff;		
+	}
+	
+	.galist .app a{
+		border-top: 3px solid #FC0;
+	}	
+	.galist .app a:hover{
+		border-top: 3px solid #FF6;
+	}
+	.galist .app a:focus{
+		border-top: 3px solid #FF6;
+		border-bottom: 1px solid #fff;		
+	}
+	
+	#show:after{
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		height: 0px;
+	}
+	
+	#info p{
+		text-indent: 0;
+		font-size: 12px;		
+	}
+	#info:after{
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		height: 0px;
+	}
+	.discript {
+		color: #FFF;
+		position: relative;
+		padding: 10px;
+		line-height: 150%;
+	}
+	.discriptJ {
+		background-color: #603;
+	}
+	.discriptA{
+		background-color: #D0D02A;
+	}
+	.discriptF{
+		background-color: #C00;
+	}
+	.discriptU{
+		background-color: #609;
+	}
+	.discript .disType{
+		width:25px; 
+		height:25px; 
+		border-radius: 50%;
+		float:left; 
+		border: 1px solid #FFF; 
+		text-align:center; 
+		color: #fff;
+		margin-right: 10px;
+		margin-top: 5px;	
+	}
+	.discript .disCont{
+		margin-left: 40px;
+	}
+	#info{
+		padding: 15px; 
+		background-color: #FFF; 
+		position:relative; 
+		line-height: 0; 
+		float:left;
+	}
+	#info #fjLeft{
+		position:relative; 
+		width:340px; 
+		float:left;
+	}
+	
+	#fallGroup:after{
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		height: 0px;
+	}
+	#fallGroup .fall{
+		float:left;
+		width: 160px;
+	}
+	#info .fengjing{
+		 padding:5px; 
+		 position:relative;
+	}
+	#info .fjSmall{
+		width:160px;
+	}
+	
+	#info .fjSmall img{
+		width: 160px;
+	}
+	#info #fjRight{
+		-webkit-column-count: 2; 
+		width: 340px; 
+		-webkit-column-gap: 0; 
+		float:left;
+	}
+	#more{
+		position:relative; 
+		width:710px; 
+		text-align:center; 
+		background-color: #fff; 
+		padding:10px 0; 
+		margin: 10px 0;
+	}
+	#more p{
+		text-indent:0; 
+		font-size:12px;
+	}
+	#conRight{
+       	float: left; 
+        position: relative; 
+        width: 260px; 
+        margin-top: 72px;
+    }
+	#rank:after{
+		content: ".";
+		clear: both;
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+	#rank p{
+		text-indent: 0;
+	}
+	.rankItem:after{
+		content: ".";
+		clear: both;
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+	.rankItem .rankNum{
+		border-radius: 50%; 
+		height: 20px; 
+		width:20px; 
+		background-color:#606; 
+		color:#fff; float:left; 
+		font-size:14px; 
+		text-align:center; 
+		margin: 0 15px 10px 15px; 
+		line-height: 18px;
+	}
+	.rankItem .rankDis{
+		float:left; 
+		font-size:14px; 
+		line-height:20px; 
+		margin-left:10px;
+	}
+	.rankItem .rankRect{
+		height:20px;
+		float:left;
+		background-color:#606;
+	}
+	#rank .title{
+		display:block; 
+		margin: 10px 15px 20px 15px; 
+		color: #CCF; 
+		padding-top: 20px;
+	}
+	#rank .rankList{
+		position:relative; 
+		margin-bottom:20px;
+	}
+	#rank .rankRect2{
+		 background-color:#FFC; 
+		 border: 1px solid #606; 
+		 float:left; 
+		 height: 18px;
+	}
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <img  src="img/logo_bicycle.png" />
+        <ul >
+          <li><a href="about.html">关于</a></li>
+          <li><a href="gallery.html">作品</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="index.html">首页</a></li>
+        </ul>
+        <a href="http://www.github.com">
+          <img class="logo" src="img/githubIcon.gif" />
+        </a>
+      </div><!-- end header-->
+     
+      <div id="content">
+      <div id="conLeft">
+       <div id="show" style=""> 
+       
+        <div class="galist" style="position: relative;">
+          <ul>
+            <li class="all"><a href="#">ALL</a></li>
+            <li class="jav"><a href="#">JavaScript Util Functions</a></li>
+            <li class="ui"><a href="#">UI Components</a></li>
+            <li class="fra"><a href="#">Framework</a></li>
+            <li class="app"><a href="#">Applications</a></li>
+          </ul>
+        </div>
+        
+        <div id="info">
+          <div id="fjLeft">            
+            <div class="fengjing fjDa" style=" width:330px;">
+              <img src="img/fengjing1.jpg" style="width:330px" />
+              <div class="discript discriptJ" >                
+                <div class="disType" >
+                  <p>J</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                  <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div><!--end fjDa--> 
+                                              
+            <div id="fallGroup" style="width: 330px; ">
+              <div id="fallleft" class="fall" style="margin-right: 10px">
+                <div class="fengjing fjSmall" >
+                  <img src="img/fengjing3.jpg"/>
+                  <div class="discript discriptF">                
+                    <div class="disType" >
+                 	  <p>F</p>
+                    </div>                
+               		<div class="disCont">
+                	  <h1>美丽的风景</h1>
+                 	 <p>美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                	</div>                
+             	  </div>
+                </div>
+                <div class="fengjing fjSmall">
+                  <img src="img/fengjing2.jpg"/>
+                  <div class="discript discriptA">                
+                    <div class="disType" >
+                 	  <p>A</p>
+                    </div>                
+               		<div class="disCont">
+                	  <h1>美丽的风景</h1>
+                 	 <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                	</div>                
+             	  </div>
+                </div>
+              </div><!--end fallLeft-->
+              
+              <div id="fallRight" class="fall">
+                <div class="fengjing fjSmall">
+                  <img src="img/fengjing2.jpg"/>
+                  <div class="discript discriptU">                
+                    <div class="disType" >
+                 	  <p>U</p>
+                    </div>                
+               		<div class="disCont">
+                	  <h1>美丽的风景</h1>
+                 	 <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                	</div>                
+             	  </div>
+                </div>
+                
+                <div class="fengjing fjSmall">
+                  <img src="img/fengjing1.jpg"/>
+                  <div class="discript discriptJ" >                
+                    <div class="disType" >
+                      <p>J</p>
+                    </div>                
+                    <div class="disCont">
+                      <h1>美丽的风景</h1>
+                      <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                    </div>                
+                  </div>
+                </div>
+            
+              </div><!--end fallRight-->
+            </div><!--end fallGroup-->
+          </div><!--end fjLeft-->
+          
+          <div id="fjRight">
+            <div class="fengjing fjSmall">
+              <img src="img/fengjing2.jpg"/>
+              <div class="discript discriptU">                
+                <div class="disType" >
+                  <p>U</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                 <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+            
+            <div class="fengjing fjSmall">
+              <img src="img/fengjing1.jpg"/>
+              <div class="discript discriptJ" >                
+                <div class="disType" >
+                  <p>J</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                  <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+            
+            <div class="fengjing fjSmall" >
+              <img src="img/fengjing3.jpg"/>
+              <div class="discript discriptF">                
+                <div class="disType" >
+                  <p>F</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                 <p>美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+            
+            <div class="fengjing fjSmall">
+              <img src="img/fengjing2.jpg"/>
+              <div class="discript discriptA">                
+                <div class="disType" >
+                  <p>A</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                 <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+            
+            <div class="fengjing fjSmall" >
+              <img src="img/fengjing3.jpg"/>
+              <div class="discript discriptF">                
+                <div class="disType" >
+                  <p>F</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                 <p>美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+            <div class="fengjing fjSmall">
+              <img src="img/fengjing2.jpg"/>
+              <div class="discript discriptA">                
+                <div class="disType" >
+                  <p>A</p>
+                </div>                
+                <div class="disCont">
+                  <h1>美丽的风景</h1>
+                 <p>美丽的风景美丽的风景美丽的风景美丽的风景美丽的风景</p>
+                </div>                
+              </div>
+            </div>
+          </div><!--end fjRight-->
+          
+        </div><!--end info-->
+            
+       </div><!-- end show--> 
+       
+        <div id="more" style="">
+          <p>点击查看更多</p>
+        </div>   
+       </div><!--end conLeft-->       
+      
+       <div id="conRight">       
+          <div class="search">
+            <div class="searchBox">
+              <img src="img/search.png" />
+              <input type="search" class="box" placeholder="Keywords" /> 
+              <button class="btn" title="Search Go">GO</button>           
+            </div>
+          </div><!-- end search --> 
+        
+        <div id="rank" style="background: #fff;">
+          <p class="title">人气排行榜</p>
+          <div class="rankList">
+            <div class="rankItem">
+              <p class="rankNum">1</p>
+              <div class="rankRect" style="width: 100px;"></div>
+              <p class="rankDis" style="">ui.tree</p>
+            </div>
+            <div class="rankItem">
+              <p class="rankNum">2</p>
+              <div class="rankRect" style="width: 78px;"></div>
+              <div class="rankRect2" style="width: 20px;"></div>
+              <p class="rankDis">util.trim</p>
+            </div>
+            <div class="rankItem">
+              <p class="rankNum">3</p>
+              <div class="rankRect" style="width: 58px;"></div>
+              <div class="rankRect2" style="width: 40px;"></div>
+              <p class="rankDis">app.todo</p>
+            </div>
+            <div class="rankItem">
+              <p class="rankNum">4</p>
+              <div class="rankRect" style="width: 38px;"></div>
+              <div class="rankRect2" style="width: 60px;"></div>
+              <p class="rankDis">ui.tab</p>
+            </div>
+            <div class="rankItem">
+              <p class="rankNum">5</p>
+              <div class="rankRect" style="width: 18px;"></div>
+              <div class="rankRect2" style="width: 80px;"></div>
+              <p class="rankDis">util.addClass</p>
+            </div>
+          </div>
+        </div>
+       </div><!--end conRight-->
+      </div><!-- end content-->
+      
+      <div class="footer">
+      <ul class="foot">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="blog.html">文章</a></li>
+        <li><a href="gallery.html">作品</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+      <div class="about" >
+        <table>
+          <tr>
+            <th>学习资料</th>
+            <th>友情链接</th>
+            <th>学习资料</th>
+            <th>友情链接</th>
+            <th>学习资料</th>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>版权信息</p>
+      <img src="img/githubIcon.gif" />
+    </div><!-- end footer -->
+      
+    </div><!-- end container-->
+  </body>
+</html>

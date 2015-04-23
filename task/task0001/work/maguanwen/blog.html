@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <title>Blog</title>
+  </head>
+    <style>	
+	  #content{
+		position:relative; 
+		margin: 20px auto 150px auto; 
+		width: 980px; 
+	  }
+	  #content:after{
+		content: ".";
+		clear: both;
+		display: block;
+		height: 0;
+		visibility: hidden;
+	  }
+	  #articles{
+		float:left; 
+		width: 710px; 
+		position: relative; 
+		margin-right: 10px;  
+	  }
+      .article{
+		background-color: #fff;
+		padding: 20px 15px;
+		position: relative;
+		margin-bottom: 10px;
+	  }
+	  .article h1{
+		font-size: 16px; 
+		padding-bottom: 10px; 
+		color: #F0F;
+	  }
+	  .article h2{
+		font-size: 12px;
+		color: #666;  
+		padding-bottom: 15px;
+	  }
+	  .article .cont{
+		font-size: 13px;
+		line-height: 170%;
+		padding-bottom: 15px;  
+	  }
+	  .article .author{
+		text-align: right;
+		font-size: 12px;
+		color:#B6B6D7;  
+	  }
+	  .article .date{
+		position: absolute;
+		top: 20px;
+		left: -60px;
+		width: 60px;
+		height: 40px;
+		background-color: rgb(181, 181, 228);
+	  }
+	  .article .date p {
+		font-size: 14px;
+		line-height: 40px;
+		text-indent: 0;
+		color: #fff;
+		text-align: center;
+	  }
+	  .article .type{
+		position: absolute; 
+		left: -60px;
+		top: 60px;
+		width: 60px;
+		height: 40px;
+		background-color: #F0F;
+	  }
+	  .article .type p {
+		font-size: 14px;
+		line-height: 40px;
+		text-indent: 0;
+		color: #fff;
+		text-align: center;
+	  }
+	  #articleType{
+		margin-bottom:10px;  
+	  }
+	  #articleType a {
+		padding: 15px;
+		margin-bottom: 1px; 
+		border-left: 3px solid #F3F; 
+		display: block;
+		background-color: #fff;
+		color:#000;
+		font-size: 14px;
+	  }
+	  #articleType a:hover{
+		border-left: 3px solid #606;   
+	  }
+	  #articleType a:focus{
+		border-left: 3px solid #606; 
+	  }
+	  #page{
+		display:block; 
+		position: relative; 
+		float: left; 
+		left: 50%;  
+	  }
+	  #page li{
+		float: left; 
+		margin-right: 10px; 
+	  }
+	  #page a{
+		padding: 10px 15px;
+		background-color: #fff;
+		font-size: 13px;
+		cursor: pointer;
+		color: #000;  
+	  }
+	  #page a:hover{
+		background-color: #F0F;
+	  }
+	  #page a:focus{
+		background-color: #F0F;
+	  }
+	  
+	  #page:after{
+		content: ".";
+		clear: both;
+		display: block;
+		height: 0;
+		visibility: hidden;
+	  }
+	  .pageNum{
+		position: relative;
+		left: -50%;  
+	  }	  
+	  .pageNum:after{
+		content: ".";
+		clear: both;
+		display: block; 
+		height: 0; 
+		visibility: hidden;
+	  }	
+	  #right{
+		float: left; 
+		position: relative; 
+		width: 260px;  
+	  }  
+	  #calendar {
+		padding: 20px; 
+		background-color: #fff; 
+		margin-bottom: 10px;  
+	  }
+	  #calendar p{
+		text-indent:0; 
+		position: relative; 
+		text-align:center;  
+	  }
+	  #calendar th{
+		font-weight: normal;
+		padding: 5px;
+		border-bottom: 1px solid #C0D9F4; 
+	  }
+	  #calendar td{
+		text-align: center;  
+		padding: 5px;
+		border-bottom: 1px solid #C0D9F4;
+	  }
+	  #calendar td:hover{
+		background: #F0F;
+		cursor: pointer;
+	  }
+	  #tags{
+		width: 100%; 
+		background-color: #fff;  
+	  }
+	  #tags h1{
+		margin: 0 10px; 
+		display:block; 
+		font-weight:normal; 
+		padding: 10px;  
+	  }
+	  #tags strong{
+		font-size: 36px;
+		font-weight: bold;  
+	  }
+	  #tags em{
+		font-size: 24px;
+		font-weight: blod;  
+	  }
+	  #tags p{
+		font-size: 14px;
+		text-indent: 0;  
+		padding: 10px;
+		color: #F0F;
+	  }
+    </style>
+  <body>
+  
+    <div id="container" >
+    
+      <div id="header" >
+        <img  src="img/logo_bicycle.png" />
+        <ul >
+          <li><a href="about.html">关于</a></li>
+          <li><a href="gallery.html">作品</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="index.html">首页</a></li>
+        </ul>
+        <a href="http://www.github.com">
+          <img class="logo" src="img/githubIcon.gif" />
+        </a>
+      </div><!-- end header -->
+      
+      <div id="content">
+        <div id="articles">
+          <div class="article" >            
+            <h1>学习心得之减少代码冗余</h1>
+            <h2>一边做任务一边构思如何更好地完善网页</h2>
+            <p class="cont">刚拿到任务的时候不知道从哪里入手，界面很漂亮。把所有界面都浏览了一遍，挑了一个最简单的，第一个界面开始做。<br/>&nbsp;&nbsp;花了两天时间终于把第一个页面做完了，中间有很多问题在当时没有头绪，比如图片中文字背景的渐变透明。将问题记录下来以后，打算先做第二个页面。这个时候发现第二个页面中有一些跟第一个页面相同的内容，比如header跟footer两个div。如果把整个div复制过去，里面的内部样式会使代码的冗余度变高，所以我就把header和footer所用到的样式写到了外部样式style.css文件里。这样就减少了代码的冗余。<br/>&nbsp;&nbsp;之后的两个页面也是应用了style.css这个样式文件，这样代码看起来就没那么多。</p>
+            <p class="author">马冠文 发表于 2015年4月15日</p>           
+            <div class="date">
+              <p>4.22</p>
+            </div>
+            <div class="type">
+              <p>心得</p>
+            </div>
+          </div>
+          <div class="article" >
+            <h1>学习心得之整体布局</h1>
+            <h2>在动手写之前做一个详细的规划可以有效的提高效率</h2>
+            <p class="cont">写完第一个页面的时候，整个人都很累，看到什么写什么，然后就是不停的修改。感觉排版达不到要求就不停的的加div，给元素加id属性，等等。回头看代码，既乱的没有章法，也把自己累的够呛。之后就是要再花时间将没有意义的代码给删除。整个工作下来不但累，而且效率非常低。在写第二个页面的时候，我就想着先给整体的布局规划一下。<br/>&nbsp;&nbsp;根据要求，我将所要用到的元素在脑海里构思了一个大概的框架，哪里用div哪里用ul哪里需要id属性或者class属性，等等。这样以后，写起来就轻松了一些，虽然也会有增减代码的时候，但总的来说效率提高了很多。所以用了不到一天的时间，就将第二个页面的基础的内容做完了。<br/>&nbsp;&nbsp;在做第三跟第四个页面的时候，虽然做的不快，但是没有像做第一个页面的时候那么的累，而且更加的熟练了。<br/>&nbsp;&nbsp;由此我发现，写代码之前做一个整体的规划是可以提高效率，会更加轻松。</p>
+            <p class="author">马冠文 发表于 2015年4月15日</p>
+            <div class="date">
+              <p>4.22</p>
+            </div>
+            <div class="type">
+              <p>心得</p>
+            </div>
+          </div>
+          <div class="article" >
+            <h1>学习心得之遇到问题</h1>
+            <h2>独立解决遇到的问题很重要，很有成就感</h2>
+            <p class="cont">比如说最开始遇到的问题就是一个元素的position属性设置成absolute以后，它的父元素的高度就变成0了，而且对之后元素的布局有很大的影响。查资料以后才发现原来一个元素的position属性设置成absolute以后，是会脱离父元素的文档流的。知道这个原因之后，问题就能很好的解决了。<br/>&nbsp;&nbsp;小问题有很多，一般也都能在网上或者书上找到原因将其解决。但是直到现在还有几个问题没有解决，希望老师们能在百忙之中抽出点时间指点迷津。<br/>&nbsp;&nbsp;一是在第一个页面中，如何做到透明度至上而下渐变为70%->50%(75%位置)->0%(我只能做到至上而下透明度从70%->0%)；二是如何将可选中的元素与不可选中的元素分别设置；三是搜索框作为焦点时，如何使后面的GO标签的变化；四是瀑布流布局中，若使用css3中的column-count属性，最左边的那一列的最下面的元素会被”分割“，后面的那部分会出现在之后那一列的最上面。</p>
+            <p class="author">马冠文 发表于 2015年4月15日</p>
+            <div class="date">
+              <p>4.22</p>
+            </div>
+            <div class="type">
+              <p>心得</p>
+            </div>
+          </div>
+          
+          <div id="page">
+            <ul class="pageNum">
+              <li><a style="cursor: not-allowed; color:#CCC;">第一页</a></li>
+              <li><a style="cursor: not-allowed; color:#CCC;">上一页</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">...</a></li>
+              <li><a href="#">下一页</a></li>
+              <li><a href="#">最后页</a></li>
+            </ul>            
+          </div>
+        </div><!-- end articles -->
+        
+        <div id="right">
+          <div class="search">
+            <div class="searchBox">
+              <img src="img/search.png" />
+              <input type="search" class="box" placeholder="Keywords" /> 
+              <button class="btn" title="Search Go">GO</button>           
+            </div>
+          </div><!-- end search -->
+          
+          <div id="articleType">
+            <a href="#" >HTML</a>
+            <a href="#" >CSS</a>
+            <a href="#" >JavaScript</a>
+            <a href="#" >其他文章</a>
+          </div>
+          
+          <div id="calendar">
+            <div style="width: 100%; height:10px; font-size:12px; font-weight:bold; margin-bottom:10px;">
+              <p><span style="float:left;"><</span> 2 0 1 5. 0 4<span style="float:right;">></span></p>
+            </div>
+            <table style="width:100%; font-size:14px">
+              <tr>
+                <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
+              </tr>
+              <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+              <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+              <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+              <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>              
+              <tr><td>29</td><td>30</td></tr>
+            </table>
+          </div>
+          
+          <div id="tags">
+            <h1>Tags</h1>
+            <p><strong >JavaScript</strong> <em>CSS</em> flex WebGL <strong>HTML</strong>Canvas prototype <em>HTML5</em> grid nodeJS CSS3 <em>jQuery ECharts</em></p>
+          </div>
+        </div><!-- end right -->
+      </div><!-- end content -->
+      
+      <div class="footer">
+      <ul class="foot">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="blog.html">文章</a></li>
+        <li><a href="gallery.html">作品</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+      <div class="about" >
+        <table>
+          <tr>
+            <th>学习资料</th>
+            <th>友情链接</th>
+            <th>学习资料</th>
+            <th>友情链接</th>
+            <th>学习资料</th>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+               <li><a href="#">HTML</a></li>               
+               <li><a href="#">CSS</a></li>
+               <li><a href="#">JAVASCRIPT</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>版权信息</p>
+      <img src="img/githubIcon.gif" />
+    </div><!-- end footer -->
+      
+    </div><!-- end container -->
+    
+  </body>
+</html>
